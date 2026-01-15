@@ -24,4 +24,17 @@ pipeline {
             }
         }
     }
+    //post build
+        post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+         failure { 
+            echo 'the agent is failed ra'
+        }
+        success{
+            echo'the pipeline is success'
+        }
+    }
+
 }
