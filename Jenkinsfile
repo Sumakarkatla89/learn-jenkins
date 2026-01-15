@@ -4,14 +4,10 @@ pipeline {
             label 'AGENT-1'
         }
     }
-
+          environment { 
+           GREETING = 'HELLO JENKINS'
+         }
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out source code'
-            }
-        }
-
         stage('Build') {
             steps {
                 echo 'Building the application'
@@ -20,7 +16,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Running tests'
+                echo 'Testing the application'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application'
+                echo "$GREETING"
             }
         }
     }
