@@ -38,6 +38,7 @@ pipeline {
             steps {
                 echo 'Deploying the application'
                 echo "$GREETING"
+                echo 'hello darling'
             }
         }
     }
